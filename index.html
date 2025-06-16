@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تحويل لصيدلية د/ميرنارفعت</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      direction: rtl;
+      text-align: center;
+      background: #f0f0f0;
+      padding-top: 50px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+    }
+    .vodafone   { background-color: #e60000; }
+    .orange     { background-color: #ff6600; }
+    .etisalat   { background-color: #008c44; }
+    .we         { background-color: #6f42c1; }
+  </style>
+</head>
+<body>
+
+  <h2>الدفع عن طريق محفظة الكترونية</h2>
+
+  <button class="vodafone" onclick="callCode('*9*7*01208881905#')">فودافون كاش</button>
+  <button class="orange"   onclick="callCode('#7115*7*01208881905#')">أورنج كاش</button>
+  <button class="etisalat" onclick="callCode('*777*1*01208881905#')">اتصالات كاش</button>
+  <button class="we"       onclick="callCode('*551*01208881905#')">وي باي</button>
+
+  <script>
+    function callCode(ussd) {
+      // استبدال * و # بالأكواد المناسبة للـ URL
+      const encoded = encodeURIComponent(ussd);
+      window.location.href = `tel:${encoded}`;
+    }
+  </script>
+
+</body>
+</html>
